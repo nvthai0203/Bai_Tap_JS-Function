@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Bài Tập Hàm</title>
+    <style>
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+    <div class="flex min-h-screen">
+        <aside class="w-72 shrink-0 bg-slate-900 text-white flex flex-col">
+            <div class="px-6 py-6 border-b border-slate-700">
+                <p class="text-xs uppercase tracking-[0.2em] text-indigo-300"></p>
+                <h1 class="mt-1 text-xl font-bold">Bài Tập Hàm</h1>
+            </div>
+
+            <nav class="flex-1 p-4 space-y-2" id="menu">
+                <button type="button" data-tab="tuyen-sinh"
+                    class="menu-btn w-full text-left rounded-xl px-4 py-3 text-sm font-semibold bg-indigo-600 text-white">
+                    Quản lý tuyển sinh
+                </button>
+                <button type="button" data-tab="tien-dien"
+                    class="menu-btn w-full text-left rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-slate-800">
+                    Tính tiền điện
+                </button>
+                <button type="button" data-tab="thue-tncn"
+                    class="menu-btn w-full text-left rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-slate-800">
+                    Tính thuế thu nhập cá nhân
+                </button>
+                <button type="button" data-tab="tien-cap"
+                    class="menu-btn w-full text-left rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-slate-800">
+                    Tính tiền cáp
+                </button>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-6 md:p-10">
+            <section id="tuyen-sinh" class="tab-panel max-w-3xl">
+                <h2 class="text-2xl font-bold">Quản lý tuyển sinh</h2>
+                <p class="mt-1 text-slate-500">Nhập điểm 3 môn, khu vực và đối tượng để xét đậu / rớt.</p>
+
+                <form id="formTuyenSinh" class="mt-6 grid gap-4 rounded-2xl bg-white p-6 shadow-sm">
+                    <label class="block">
+                        <span class="mb-1 block text-sm font-medium">Điểm chuẩn</span>
+                        <input name="diemChuan" type="number" step="0.1" min="0" required
+                            class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                    </label>
+                    <div class="grid gap-4 md:grid-cols-3">
+                        <label class="block">
+                            <span class="mb-1 block text-sm font-medium">Điểm môn 1</span>
+                            <input name="mon1" type="number" step="0.1" min="0" max="10" required
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                        </label>
+                        <label class="block">
+                            <span class="mb-1 block text-sm font-medium">Điểm môn 2</span>
+                            <input name="mon2" type="number" step="0.1" min="0" max="10" required
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                        </label>
+                        <label class="block">
+                            <span class="mb-1 block text-sm font-medium">Điểm môn 3</span>
+                            <input name="mon3" type="number" step="0.1" min="0" max="10" required
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                        </label>
+                    </div>
+                    <div class="grid gap-4 md:grid-cols-2">
+                        <label class="block">
+                            <span class="mb-1 block text-sm font-medium">Khu vực</span>
+                            <select name="khuVuc"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                                <option value="X">Không thuộc khu vực ưu tiên</option>
+                                <option value="A">Khu vực A (+2)</option>
+                                <option value="B">Khu vực B (+1)</option>
+                                <option value="C">Khu vực C (+0.5)</option>
+                            </select>
+                        </label>
+                        <label class="block">
+                            <span class="mb-1 block text-sm font-medium">Đối tượng</span>
+                            <select name="doiTuong"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                                <option value="0">Không thuộc đối tượng ưu tiên</option>
+                                <option value="1">Đối tượng 1 (+2.5)</option>
+                                <option value="2">Đối tượng 2 (+1.5)</option>
+                                <option value="3">Đối tượng 3 (+1)</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button type="submit"
+                        class="rounded-lg bg-indigo-600 px-4 py-2.5 font-semibold text-white hover:bg-indigo-700">Kết
+                        quả</button>
+                    <p id="ketQuaTuyenSinh" class="rounded-lg bg-slate-50 px-4 py-3 text-sm"></p>
+                </form>
+            </section>
+
+            <section id="tien-dien" class="tab-panel hidden max-w-3xl">
+                <h2 class="text-2xl font-bold">Tính tiền điện</h2>
+                <p class="mt-1 text-slate-500">Tính hóa đơn điện theo số kWh tiêu thụ.</p>
+
+                <form id="formTienDien" class="mt-6 grid gap-4 rounded-2xl bg-white p-6 shadow-sm">
+                    <label class="block">
+                        <span class="mb-1 block text-sm font-medium">Họ tên</span>
+                        <input name="hoTen" type="text" required
+                            class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                    </label>
+                    <label class="block">
+                        <span class="mb-1 block text-sm font-medium">Số kWh</span>
+                        <input name="soKw" type="number" min="0" step="0.1" required
+                            class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                    </label>
+                    <button type="submit"
+                        class="rounded-lg bg-indigo-600 px-4 py-2.5 font-semibold text-white hover:bg-indigo-700">Tính
+                        tiền điện</button>
+                    <p id="ketQuaTienDien" class="rounded-lg bg-slate-50 px-4 py-3 text-sm"></p>
+                </form>
+            </section>
+
+            <section id="thue-tncn" class="tab-panel hidden max-w-3xl">
+                <h2 class="text-2xl font-bold">Tính thuế thu nhập cá nhân</h2>
+                <p class="mt-1 text-slate-500">Tính thuế theo thu nhập năm và số người phụ thuộc.</p>
+
+                <form id="formThue" class="mt-6 grid gap-4 rounded-2xl bg-white p-6 shadow-sm">
+                    <label class="block">
+                        <span class="mb-1 block text-sm font-medium">Họ tên</span>
+                        <input name="hoTen" type="text" required
+                            class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                    </label>
+                    <label class="block">
+                        <span class="mb-1 block text-sm font-medium">Tổng thu nhập năm (VNĐ)</span>
+                        <input name="thuNhapNam" type="number" min="0" required
+                            class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                    </label>
+                    <label class="block">
+                        <span class="mb-1 block text-sm font-medium">Số người phụ thuộc</span>
+                        <input name="soNguoiPhuThuoc" type="number" min="0" step="1" required
+                            class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                    </label>
+                    <button type="submit"
+                        class="rounded-lg bg-indigo-600 px-4 py-2.5 font-semibold text-white hover:bg-indigo-700">Tính
+                        thuế</button>
+                    <p id="ketQuaThue" class="rounded-lg bg-slate-50 px-4 py-3 text-sm"></p>
+                </form>
+            </section>
+
+            <section id="tien-cap" class="tab-panel hidden max-w-3xl">
+                <h2 class="text-2xl font-bold">Tính tiền cáp</h2>
+                <p class="mt-1 text-slate-500">Tính hóa đơn cáp theo loại khách hàng.</p>
+
+                <form id="formTienCap" class="mt-6 grid gap-4 rounded-2xl bg-white p-6 shadow-sm">
+                    <label class="block">
+                        <span class="mb-1 block text-sm font-medium">Mã khách hàng</span>
+                        <input name="maKH" type="text" required
+                            class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                    </label>
+                    <label class="block">
+                        <span class="mb-1 block text-sm font-medium">Loại khách hàng</span>
+                        <select name="loaiKH" id="loaiKH"
+                            class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                            <option value="nhaDan">Nhà dân</option>
+                            <option value="doanhNghiep">Doanh nghiệp</option>
+                        </select>
+                    </label>
+                    <label id="wrapSoKetNoi" class="hidden block">
+                        <span class="mb-1 block text-sm font-medium">Số kết nối</span>
+                        <input name="soKetNoi" id="soKetNoi" type="number" min="0" step="1" value="0"
+                            class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                    </label>
+                    <label class="block">
+                        <span class="mb-1 block text-sm font-medium">Số kênh cao cấp</span>
+                        <input name="soKenhCaoCap" type="number" min="0" step="1" required
+                            class="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500">
+                    </label>
+                    <button type="submit"
+                        class="rounded-lg bg-indigo-600 px-4 py-2.5 font-semibold text-white hover:bg-indigo-700">Tính
+                        tiền cáp</button>
+                    <p id="ketQuaTienCap" class="rounded-lg bg-slate-50 px-4 py-3 text-sm"></p>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="./js/navbar.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
