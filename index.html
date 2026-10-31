@@ -47,12 +47,14 @@
 
         <main class="flex-1 p-6 md:p-10">
             <section id="tuyen-sinh" class="tab-panel max-w-3xl">
-                <div>
-                    <img src="./images/graduating-student.png" alt="graduating-student" class="w-10 h-10">
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold">Quản lý tuyển sinh</h2>
-                    <p class="mt-1 text-slate-500">Nhập điểm 3 môn, khu vực và đối tượng để xét đậu / rớt.</p>
+                <div class="flex items-center gap-3">
+                    <div>
+                        <img src="./images/graduating-student.png" alt="graduating-student" class="w-10 h-10">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold">Quản lý tuyển sinh</h2>
+                        <p class="mt-1 text-slate-500">Nhập điểm 3 môn, khu vực và đối tượng để xét đậu / rớt.</p>
+                    </div>
                 </div>
 
                 <form id="formTuyenSinh" class="mt-6 grid gap-4 rounded-2xl bg-white p-6 shadow-sm">
@@ -102,14 +104,21 @@
                     </div>
                     <button type="submit"
                         class="rounded-lg bg-indigo-600 px-4 py-2.5 font-semibold text-white hover:bg-indigo-700">Kết
-                        quả</button>
+                        quả xét tuyển</button>
                     <p id="ketQuaTuyenSinh" class="rounded-lg bg-slate-50 px-4 py-3 text-sm"></p>
                 </form>
             </section>
 
             <section id="tien-dien" class="tab-panel hidden max-w-3xl">
-                <h2 class="text-2xl font-bold">Tính tiền điện</h2>
-                <p class="mt-1 text-slate-500">Tính hóa đơn điện theo số kWh tiêu thụ.</p>
+                <div class="flex items-center gap-3">
+                    <div>
+                        <img src="./images/electrical-energy.png" alt="electrical-energy" class="w-10 h-10">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold">Tính tiền điện</h2>
+                        <p class="mt-1 text-slate-500">Tính hóa đơn điện theo số kWh tiêu thụ.</p>
+                    </div>
+                </div>
 
                 <form id="formTienDien" class="mt-6 grid gap-4 rounded-2xl bg-white p-6 shadow-sm">
                     <label class="block">
@@ -130,8 +139,15 @@
             </section>
 
             <section id="thue-tncn" class="tab-panel hidden max-w-3xl">
-                <h2 class="text-2xl font-bold">Tính thuế thu nhập cá nhân</h2>
-                <p class="mt-1 text-slate-500">Tính thuế theo thu nhập năm và số người phụ thuộc.</p>
+                <div class="flex items-center gap-3">
+                    <div>
+                        <img src="./images/salary.png" alt="salary" class="w-10 h-10">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold">Tính thuế thu nhập cá nhân</h2>
+                        <p class="mt-1 text-slate-500">Tính thuế theo thu nhập năm và số người phụ thuộc.</p>
+                    </div>
+                </div>
 
                 <form id="formThue" class="mt-6 grid gap-4 rounded-2xl bg-white p-6 shadow-sm">
                     <label class="block">
@@ -157,8 +173,15 @@
             </section>
 
             <section id="tien-cap" class="tab-panel hidden max-w-3xl">
-                <h2 class="text-2xl font-bold">Tính tiền cáp</h2>
-                <p class="mt-1 text-slate-500">Tính hóa đơn cáp theo loại khách hàng.</p>
+                <div class="flex items-center gap-3">
+                    <div>
+                        <img src="./images/lan.png" alt="lantern" class="w-10 h-10">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold">Tính tiền cáp</h2>
+                        <p class="mt-1 text-slate-500">Tính hóa đơn cáp theo loại khách hàng.</p>
+                    </div>
+                </div>
 
                 <form id="formTienCap" class="mt-6 grid gap-4 rounded-2xl bg-white p-6 shadow-sm">
                     <label class="block">
