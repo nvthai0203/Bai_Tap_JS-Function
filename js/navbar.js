@@ -10,8 +10,8 @@ function doiTab(tabId) {
         const isActive = button.dataset.tab === tabId;
         button.classList.toggle("bg-indigo-600", isActive);
         button.classList.toggle("text-white", isActive);
-        button.classList.toggle("text-slate-300", !isActive);
-        button.classList.toggle("hover:bg-slate-800", !isActive);
+        button.classList.toggle("text-slate-700", !isActive);
+        button.classList.toggle("hover:bg-slate-100", !isActive);
     });
 }
 
