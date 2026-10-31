@@ -19,10 +19,10 @@
 
 <body class="bg-slate-100 text-slate-800">
     <div class="flex min-h-screen">
-        <aside class="w-72 shrink-0 bg-slate-900 text-white flex flex-col">
-            <div class="px-6 py-6 border-b border-slate-700">
-                <p class="text-xs uppercase tracking-[0.2em] text-indigo-300"></p>
-                <h1 class="mt-1 text-xl font-bold">Bài Tập Hàm</h1>
+        <aside class="w-72 shrink-0 bg-white text-slate-800 flex flex-col border-r border-slate-200">
+            <div class="px-6 py-6 border-b border-slate-200 flex items-center gap-3">
+                <img src="./images/js-file.png" alt="js-file" class="w-10 h-10">
+                <h1 class="text-xl font-bold">Bài Tập Hàm</h1>
             </div>
 
             <nav class="flex-1 p-4 space-y-2" id="menu">
@@ -31,15 +31,15 @@
                     Quản lý tuyển sinh
                 </button>
                 <button type="button" data-tab="tien-dien"
-                    class="menu-btn w-full text-left rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-slate-800">
+                    class="menu-btn w-full text-left rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">
                     Tính tiền điện
                 </button>
                 <button type="button" data-tab="thue-tncn"
-                    class="menu-btn w-full text-left rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-slate-800">
+                    class="menu-btn w-full text-left rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">
                     Tính thuế thu nhập cá nhân
                 </button>
                 <button type="button" data-tab="tien-cap"
-                    class="menu-btn w-full text-left rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-slate-800">
+                    class="menu-btn w-full text-left rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">
                     Tính tiền cáp
                 </button>
             </nav>
@@ -47,8 +47,13 @@
 
         <main class="flex-1 p-6 md:p-10">
             <section id="tuyen-sinh" class="tab-panel max-w-3xl">
-                <h2 class="text-2xl font-bold">Quản lý tuyển sinh</h2>
-                <p class="mt-1 text-slate-500">Nhập điểm 3 môn, khu vực và đối tượng để xét đậu / rớt.</p>
+                <div>
+                    <img src="./images/graduating-student.png" alt="graduating-student" class="w-10 h-10">
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold">Quản lý tuyển sinh</h2>
+                    <p class="mt-1 text-slate-500">Nhập điểm 3 môn, khu vực và đối tượng để xét đậu / rớt.</p>
+                </div>
 
                 <form id="formTuyenSinh" class="mt-6 grid gap-4 rounded-2xl bg-white p-6 shadow-sm">
                     <label class="block">
