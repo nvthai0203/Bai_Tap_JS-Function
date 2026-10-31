@@ -1,3 +1,4 @@
+// Quản lý tuyển sinh
 function diemUuTienKhuVuc(khuVuc) {
     if (khuVuc === "A") return 2;
     if (khuVuc === "B") return 1;
@@ -40,7 +41,9 @@ document.getElementById("formTuyenSinh").addEventListener("submit", (event) => {
     document.getElementById("ketQuaTuyenSinh").textContent =
         `Tổng điểm: ${ketQua.tongDiem}. Kết quả: ${ketQua.dau ? "ĐẬU" : "RỚT"} (${ketQua.lyDo}).`;
 });
+//======================================================================================================
 
+// Tính tiền điện
 function tinhTienDien(soKw) {
     const bac = [
         { gioiHan: 50, donGia: 500 },
@@ -73,7 +76,9 @@ document.getElementById("formTienDien").addEventListener("submit", (event) => {
     document.getElementById("ketQuaTienDien").textContent =
         `Khách hàng ${hoTen} dùng ${soKw} kWh, tiền điện: ${tien.toLocaleString("vi-VN")} VNĐ.`;
 });
+//======================================================================================================
 
+// Tính thuế thu nhập cá nhân
 function tinhThueTNCN(thuNhapNam, soNguoiPhuThuoc) {
     const thuNhapChiuThue = thuNhapNam - 4e6 - soNguoiPhuThuoc * 1.6e6;
     if (thuNhapChiuThue <= 0) return 0;
@@ -110,7 +115,9 @@ document.getElementById("formThue").addEventListener("submit", (event) => {
     document.getElementById("ketQuaThue").textContent =
         `Họ tên: ${hoTen}. Thuế thu nhập cá nhân: ${thue.toLocaleString("vi-VN")} VNĐ.`;
 });
+//======================================================================================================
 
+// Tính tiền cáp
 function tinhTienCap(loaiKH, soKetNoi, soKenhCaoCap) {
     if (loaiKH === "nhaDan") {
         return 4.5 + 20.5 + soKenhCaoCap * 7.5;
@@ -136,3 +143,4 @@ document.getElementById("formTienCap").addEventListener("submit", (event) => {
     document.getElementById("ketQuaTienCap").textContent =
         `Mã KH ${form.maKH.value}: ${tien.toLocaleString("en-US", { style: "currency", currency: "USD" })}.`;
 });
+//======================================================================================================
